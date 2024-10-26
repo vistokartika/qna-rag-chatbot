@@ -7,14 +7,14 @@ from src.app.rag_chatbot import retriever_vector_store, init_rag_chain_workflow
 from src.app.evaluator import helpfulness_evaluator
 
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.35)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.25, max_tokens=None)
 
 retriever = retriever_vector_store("spotify_reviews", embeddings, 320)
 app = init_rag_chain_workflow(llm, retriever)
 
 config = {"configurable": {"thread_id": str(uuid.uuid4())}}
 
-st.title("💬 Chatbot")
+st.title("💬 Spotify Reviews")
 
 example_questions = [
     "What are the specific features or aspects that users appreciate the most in our application?",
