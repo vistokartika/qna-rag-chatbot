@@ -3,7 +3,7 @@
 This project is a Question-Answering (Q&A) Retrieval-Augmented Generation (RAG) Chatbot designed to help analyze and respond to questions about user feedback from Spotify reviews. The chatbot leverages LLM and retrieval techniques to gather relevant context from a database of reviews, enhancing its ability to generate informed, contextually accurate answers and deliver insightful responses to a range of management queries and analysis.
 
 ## Preview
-![alt text](qna-rag-chatbot-preview.jpg)
+![alt text](qna-rag-chatbot-preview.png)
 
 ## Architecture
 - Framework: LangChain
@@ -62,3 +62,7 @@ python src/data/data_ingestion.py
 ├── poetry.lock
 └── pyproject.toml
 ```
+
+## Further Improvements
+1. Allow human feedback on the UI to gather RLHF dataset for one-shot prompting or even fine-tuning.
+2. Implement query intent classification for qualitative and quantitative query. For qualitative query, it has already implemented based on RAG. For quantitative query it's better to let the LLM generate 'text-to-dataframe' script and execute directly on the dataframe as it will be more precise and cover the whole dataset.

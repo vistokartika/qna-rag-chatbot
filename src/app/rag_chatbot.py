@@ -49,6 +49,7 @@ def init_rag_chain_workflow(llm, retriever):
         "formulate a standalone question which can be understood "
         "without the chat history. Do NOT answer the question, "
         "just reformulate it if needed and otherwise return it as is."
+        "The context is Google user reviews for Spotify App."
     )
     contextualize_q_prompt = ChatPromptTemplate.from_messages(
         [
@@ -65,8 +66,15 @@ def init_rag_chain_workflow(llm, retriever):
         "You are an assistant for question-answering tasks. "
         "Use the following pieces of retrieved context to answer "
         "the question. If you don't know the answer, say that you "
-        "don't know. Use three sentences maximum and keep the "
-        "answer concise."
+        "don't know."
+        "\n\n"
+        "The given context is chat history and Google user reviews for Spotify App."
+        "You will receive multiple user reviews for context and each will contains:"
+        "1. review_text: The review text which describes the user's experience with the app."
+        "2. rating_from_reviewer: The rating which is an integer between 1 and 5. The higher the rating, the more satisfied the user is."
+        "3. review_likes: The number of likes the review has received from other users. Usually, the more likes, the more helpful and relevant the review is."
+        "4. app_version: The version of the app the user is reviewing."
+        "5. review_date: The date the review was posted. Please highly consider this date when answering questions that has period of time mention such as 'latest' or 'recent'."
         "\n\n"
         "{context}"
     )
