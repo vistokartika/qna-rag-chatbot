@@ -9,7 +9,7 @@ from src.app.evaluator import helpfulness_evaluator
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.25, max_tokens=None)
 
-retriever = retriever_vector_store("spotify_reviews", embeddings, 320)
+retriever = retriever_vector_store("spotify_reviews", embeddings, 200)
 app = init_rag_chain_workflow(llm, retriever)
 
 config = {"configurable": {"thread_id": str(uuid.uuid4())}}
