@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "mekari-rag-chatbot"
+version = "0.1.0"
+description = ""
+authors = ["vistokartika"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.12"
+llama-index = "0.11.20"
+openai = "1.52.2"
+streamlit = "1.39.0"
+pandas = "2.2.3"
+pymilvus = "2.4.8"
+langchain = "0.3.4"
+tqdm = "4.66.5"
+langchain-community = "0.3.3"
+langchain-openai = "0.2.3"
+demoji = "1.1.0"
+emoji = "2.14.0"
+langchain-milvus = "0.1.6"
+langgraph = "0.2.39"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
