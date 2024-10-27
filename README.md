@@ -5,6 +5,9 @@ This project is a Question-Answering (Q&A) Retrieval-Augmented Generation (RAG) 
 ## Preview
 ![alt text](qna-rag-chatbot-preview.png)
 
+## Inference Flow
+![alt text](qna-rag-chatbot-flow.png)
+
 ## Architecture
 - Framework: LangChain
 - LLM: OpenAI GPT4
